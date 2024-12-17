@@ -19,15 +19,24 @@ export default function RootLayout({
     <html lang="vi" className="dark">
       <body className="dark:bg-darkModeBackground">
         <div className="container mx-auto"> {/* container */}
+
+          {/* khối sider - search - nội dung chính */}
           <div className="flex"> {/* wrap */}
-              <Sider/>
+              <Sider/>  {/* sider */}
               <main className="flex-1 ml-[20px] mt-[20px]"> 
                 <Search /> {/* khung tìm kiếm */}
                 {children} {/* nội dung chính */}
               </main>
           </div>
         </div>
-        <Play /> {/* play music */}
+
+        {/* khối phát nhạc */}
+        <div className="dark:bg-darkModePrimary">
+          <div className="container mx-auto">
+            <Play /> {/* play music */}
+          </div>
+        </div>
+        
       </body>
     </html>
   );

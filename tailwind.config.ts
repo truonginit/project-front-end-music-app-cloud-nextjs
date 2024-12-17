@@ -24,10 +24,13 @@ export default {
         darkModeBackground: '#292929',
         darkModePrimary: '#212121',
         darkModeSecondary: '#EFEEE0',
-        darkModeText: '#FFFFFF',
+        
         darkModeActive: '#00ADEF',
 
         darkModeLogoBg: '#1C1C1C',
+
+        darkModeText: '#FFFFFF',
+        darkModeSubText: '#FFFFFF70',
 
         // light mode
         // lightModeBackground: '#FFFFFF',
