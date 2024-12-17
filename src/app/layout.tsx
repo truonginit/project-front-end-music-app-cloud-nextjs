@@ -21,7 +21,7 @@ export default function RootLayout({
         <div className="container mx-auto"> {/* container */}
           <div className="flex"> {/* wrap */}
               <Sider/>
-              <main className=""> 
+              <main className="flex-1 ml-[20px] mt-[20px]"> 
                 <Search /> {/* khung tìm kiếm */}
                 {children} {/* nội dung chính */}
               </main>

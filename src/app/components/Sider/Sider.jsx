@@ -22,8 +22,8 @@ export const Sider = () => {
             <nav className="dark:bg-darkModePrimary w-[280px] h-[100vh]" >
                 <SiderLogo/>
                 <ul className='px-[20px] py-[30px]'> 
-                    {dataSider.map(item => (
-                        <SiderItem icon={item.icon} title={item.title} href={item.href} />
+                    {dataSider.map((item, index) => (
+                        <SiderItem key={index} icon={item.icon} title={item.title} href={item.href} />
                     ))}
                 </ul>
             </nav>
