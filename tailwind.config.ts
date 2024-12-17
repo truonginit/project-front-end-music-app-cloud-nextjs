@@ -27,6 +27,8 @@ export default {
         darkModeText: '#FFFFFF',
         darkModeActive: '#00ADEF',
 
+        darkModeLogoBg: '#1C1C1C',
+
         // light mode
         // lightModeBackground: '#FFFFFF',
         // lightModePrimary: '#212121',

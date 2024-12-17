@@ -17,12 +17,12 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode; }>) {
   return (
     <html lang="vi" className="dark">
-      <body>
+      <body className="dark:bg-darkModeBackground">
         <div className="container mx-auto"> {/* container */}
           <div className="flex"> {/* wrap */}
               <Sider/>
-              <main className=""> {/* khung tìm kiếm */}
-                <Search />
+              <main className=""> 
+                <Search /> {/* khung tìm kiếm */}
                 {children} {/* nội dung chính */}
               </main>
           </div>
