@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 // components
 import { Section1 } from './components/section1/Section1';
 import { Section2 } from './components/section2/Section2';
+import { Section3 } from './components/section3/Section3';
 
 // Metadata
 export const metadata: Metadata = {
@@ -15,6 +16,7 @@ export default function Home() {
     <>
       <Section1 />
       <Section2 />
+      <Section3 />
     </>
   );
 }

@@ -4,7 +4,7 @@
 export const CardItem = () => {
     return (
         <>
-            <div className="w-[180px]">
+            <div className="w-[180px] cursor-pointer">
                 {/* image */}
                 <div className='mb-[10px]'>
                     <img 

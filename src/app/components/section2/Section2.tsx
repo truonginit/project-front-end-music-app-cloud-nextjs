@@ -7,7 +7,7 @@ export const Section2 = () => {
         <>
             <div>
                 <BoxTitle title="danh mục nổi bật" className="" />
-                <Card />
+                <Card className="" />
             </div>  
         </>
     );
