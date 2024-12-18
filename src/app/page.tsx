@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 
+// components
+import { Section1 } from './components/section1/Section1';
+
 // Metadata
 export const metadata: Metadata = {
   title: "Music AppCloud",
@@ -9,9 +12,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <h1 className="dark:bg-white text-white" >
-        TRANG CHỦ
-      </h1>
+      <Section1 />
     </>
   );
 }

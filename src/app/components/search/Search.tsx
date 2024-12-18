@@ -7,7 +7,7 @@ export const Search = () => {
         <>
             <form 
                 action=""
-                className="w-[100%] dark:bg-darkModePrimary rounded-[50px] overflow-hidden py-[12px] px-[32px] flex items-center gap-x-[20px]"
+                className="w-[100%] dark:bg-darkModePrimary rounded-[50px] overflow-hidden py-[12px] px-[32px] flex items-center gap-x-[20px] mb-[30px]"
             >
                 <input
                     type="search"
