@@ -1,13 +1,13 @@
 // components
 import { Banner } from "../banner/Banner";
-import { ListenALot } from '../listen/ListenALot';
+import { Song } from '../song/Song';
 
 export const Section1 = () => {
     return (
         <>
-            <div className="flex items-end xl:flex-nowrap flex-wrap" > {/* wrap */}
+            <div className="flex items-end xl:flex-nowrap flex-wrap mb-[30px]" > {/* wrap */}
                 <Banner />
-                <ListenALot />  {/* nghe nhiều */}
+                <Song />  {/* nghe nhiều */}
             </div>
         </>
     );
