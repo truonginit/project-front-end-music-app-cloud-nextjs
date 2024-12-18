@@ -7,13 +7,13 @@ export const Search = () => {
         <>
             <form 
                 action=""
-                className="w-[100%] dark:bg-darkModePrimary rounded-[50px] overflow-hidden py-[12px] px-[32px] flex items-center gap-x-[20px] mb-[30px]"
+                className="w-[100%] dark:bg-darkModePrimary rounded-[50px] overflow-hidden py-[12px] px-[32px] flex items-center md:gap-x-[20px] gap-x-[10px] mb-[30px]"
             >
                 <input
                     type="search"
                     name="keyword"
                     placeholder="Tìm kiếm..."
-                    className="flex-1 order-2 bg-transparent outline-none text-[15px] dark:text-darkModeText dark:placeholder-darkModeText"
+                    className="flex-1 order-2 bg-transparent outline-none md:text-[15px] text-[13px] font-400 dark:text-darkModeText dark:placeholder-darkModeText"
                     defaultValue={""}
                 >
                 </input>

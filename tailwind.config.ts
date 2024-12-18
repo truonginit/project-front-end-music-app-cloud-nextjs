@@ -14,8 +14,8 @@ export default {
         'sm': '575.98px',   //  min-width: 575.98px
         'md': '767.98px',   //  min-width: 767.98px
         'lg': '991.98px',   //  min-width: 991.98px
-        'xl': '1239.98px',  //  min-width: 1239.98px
-        '2xl': '1239.98px', //  min-width: 1536.98px
+        'xl': '1279.98px',  //  min-width: 1239.98px
+        '2xl': '1279.98px', //  min-width: 1536.98px
       },
 
       /** Màu sắc */

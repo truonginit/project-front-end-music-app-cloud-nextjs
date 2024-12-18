@@ -20,7 +20,7 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
           {/* khối sider - search - nội dung chính */}
           <div className="flex"> {/* wrap */}
               <Sider/>  {/* sider */}
-              <main className="flex-1 ml-[20px] mt-[20px]"> 
+              <main className="flex-1 md:ml-[20px] md:mr-[0px] ml-[10px] mr-[5px] mt-[20px] mb-[100px]"> 
                 <Search /> {/* khung tìm kiếm */}
                 {children} {/* nội dung chính */}
               </main>

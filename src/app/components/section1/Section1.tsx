@@ -5,7 +5,7 @@ import { ListenALot } from '../listen/ListenALot';
 export const Section1 = () => {
     return (
         <>
-            <div className="flex items-end" > {/* wrap */}
+            <div className="flex items-end xl:flex-nowrap flex-wrap" > {/* wrap */}
                 <Banner />
                 <ListenALot />  {/* nghe nhiều */}
             </div>

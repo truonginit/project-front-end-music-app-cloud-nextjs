@@ -19,7 +19,7 @@ export const Sider = () => {
 
     return (
         <>
-            <nav className="dark:bg-darkModePrimary w-[280px] h-[100vh]" >
+            <nav className="dark:bg-darkModePrimary md:w-[280px] w-[180px] h-[100vh]" >
                 <SiderLogo/>
                 <ul className='px-[20px] py-[30px]'> 
                     {dataSider.map((item, index) => (

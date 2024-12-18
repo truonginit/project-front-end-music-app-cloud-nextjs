@@ -15,10 +15,10 @@ export const SiderItem = (props) => {
             <li className=" mb-[20px] dark:text-darkModeText">
                 <Link 
                     href={href} 
-                    className={`flex items-center gap-x-[20px] transition duration-0 ease-in-out ${pathname === href ? "dark:text-darkModeActive" : "dark:text-darkModeText"}  hover:dark:text-darkModeActive  hover:duration-1000 `}
+                    className={`flex items-center xl:gap-x-[20px] gap-x-[10px] transition duration-0 ease-in-out ${pathname === href ? "dark:text-darkModeActive" : "dark:text-darkModeText"}  hover:dark:text-darkModeActive  hover:duration-1000 `}
                 >
-                    <span className="text-[20px] "> {icon} </span>
-                    <span className="text-[16px] font-700"> {title} </span>
+                    <span className="xl:text-[20px] "> {icon} </span>
+                    <span className="xl:text-[16px] text-[13px] font-700"> {title} </span>
                 </Link>
             </li>
         </>
