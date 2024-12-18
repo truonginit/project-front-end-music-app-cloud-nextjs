@@ -12,14 +12,11 @@ export const metadata: Metadata = {
   description: "Ứng dụng nghe nhạc trực tuyến",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{ children: React.ReactNode; }>) {
+export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
   return (
     <html lang="vi" className="dark">
       <body className="dark:bg-darkModeBackground">
         <div className="container mx-auto"> {/* container */}
-
           {/* khối sider - search - nội dung chính */}
           <div className="flex"> {/* wrap */}
               <Sider/>  {/* sider */}
@@ -31,7 +28,7 @@ export default function RootLayout({
         </div>
 
         {/* khối phát nhạc */}
-        <div className="dark:bg-darkModePrimary">
+        <div className="dark:bg-darkModePrimary border-t-[1px] dark:border-darkModeBorder fixed bottom-0 w-full">
           <div className="container mx-auto">
             <Play /> {/* play music */}
           </div>

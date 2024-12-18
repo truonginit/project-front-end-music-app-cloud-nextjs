@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <h1 className="dark:bg-darkModeBackground" >
+      <h1 className="dark:bg-white text-white" >
         TRANG CHỦ
       </h1>
     </>

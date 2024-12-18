@@ -32,6 +32,8 @@ export default {
         darkModeText: '#FFFFFF',
         darkModeSubText: '#FFFFFF70',
 
+        darkModeBorder: '#494949',
+
         // light mode
         // lightModeBackground: '#FFFFFF',
         // lightModePrimary: '#212121',

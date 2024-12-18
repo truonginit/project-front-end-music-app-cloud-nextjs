@@ -7,7 +7,7 @@ export const Play = () => {
     return (
         <>
             <div 
-                className="flex items-center justify-between py-[20px]"
+                className="flex items-center justify-between py-[12.4px]"
             > {/* wrap */}
                 <PlayControlBadge />
 
