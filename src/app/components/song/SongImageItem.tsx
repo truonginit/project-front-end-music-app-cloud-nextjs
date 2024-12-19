@@ -6,7 +6,7 @@ export const SongImageItem = () => {
                 <img 
                     src="/demo/hoquanghieu-cophong.png" 
                     alt="cô phòng"
-                    className="w-full h-full"
+                    className="w-full h-full object-cover"
                 />
             </div>
         </>
