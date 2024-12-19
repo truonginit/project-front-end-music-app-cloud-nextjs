@@ -1,11 +1,10 @@
-// components
-import { SiderItem } from './SiderItem';
-import { SiderLogo } from './SiderLogo';
-
 // icon
 import { FaHouse, FaMusic, FaPodcast, FaHeart, FaUserPlus, FaUser, FaRightFromBracket} from "react-icons/fa6";
 
-export const Sider = () => {
+// components
+import { SiderItem } from './SiderItem';
+
+export const SiderList = () => {
     // data của sider
     const dataSider = [
         { icon: <FaHouse />, title: 'Trang Chủ', href: '/' },
@@ -19,14 +18,11 @@ export const Sider = () => {
 
     return (
         <>
-            <nav className="dark:bg-darkModePrimary md:w-[280px] w-[180px] h-[100vh]" >
-                <SiderLogo/>
-                <ul className='px-[20px] py-[30px]'> 
-                    {dataSider.map((item, index) => (
-                        <SiderItem key={index} icon={item.icon} title={item.title} href={item.href} />
-                    ))}
-                </ul>
-            </nav>
+            <ul className='px-[20px] py-[30px]'> 
+                {dataSider.map((item, index) => (
+                    <SiderItem key={index} icon={item.icon} title={item.title} href={item.href} />
+                ))}
+            </ul>
         </>
     );
 }

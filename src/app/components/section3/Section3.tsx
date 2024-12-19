@@ -1,6 +1,6 @@
 // components
-import { BoxTitle } from "../boxtitle/BoxTitle";
-import { Card } from '../card/Card';
+import { BoxTitle } from "../BoxTitle/BoxTitle";
+import { Card } from '../Card/Card';
 
 export const Section3 = () => {
     return (

@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 // components
-import { Sider } from './components/sider/Sider';
-import { Search } from './components/search/Search';
-import { Play } from './components/play/Play';
+import { Sider } from './components/Sider/Sider';
+import { Search } from './components/Search/Search';
+import { Play } from './components/Play/Play';
 
 // Metadata
 export const metadata: Metadata = {
@@ -16,14 +16,14 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
   return (
     <html lang="vi" className="dark">
       <body className="dark:bg-darkModeBackground">
-        <div className="container mx-auto"> {/* container */}
-          {/* khối sider - search - nội dung chính */}
+        <div className="container md:mx-auto mx-[0px]"> {/* container */}
+          {/* Sider & Search & Nội Dung Chính */}
           <div className="flex"> {/* wrap */}
               <Sider/>  {/* sider */}
-              <main className="flex-1 md:ml-[20px] md:mr-[0px] ml-[10px] mr-[5px] mt-[20px] mb-[100px]"> 
-                <Search /> {/* khung tìm kiếm */}
-                {children} {/* nội dung chính */}
-              </main>
+                <main className="flex-1 ml-[20px]  mt-[20px] mb-[100px]"> 
+                  <Search /> {/* khung tìm kiếm */}
+                  {children} {/* nội dung chính */}
+                </main>
           </div>
         </div>
 

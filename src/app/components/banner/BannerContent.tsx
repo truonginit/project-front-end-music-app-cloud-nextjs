@@ -3,7 +3,7 @@ export const BannerContent = () => {
         <>
             <div className="flex-1 mx-[30px]">
                 {/* title */}
-                <h3 className="xl:text-[32px] lg:text-[46px] text-[30px] font-700 dark:text-darkModeText md:mb-[6px] mb-[3px] md:mt-[0px] mt-[10px] md:text-left text-center">
+                <h3 className="xl:text-[32px] lg:text-[46px] text-[30px] font-[700] dark:text-darkModeText md:mb-[6px] mb-[3px] md:mt-[0px] mt-[10px] md:text-left text-center">
                     Nhạc EDM
                 </h3>
 

@@ -1,13 +1,13 @@
 // components
-import { SongListItem } from './SongListItem';
+import { SongItem } from './SongItem';
 
 export const SongList = () => {
     return (
         <>
             <div className='flex flex-col gap-y-[12px]'>
-                <SongListItem />
-                <SongListItem />
-                <SongListItem />
+                <SongItem />
+                <SongItem />
+                <SongItem />
             </div>
         </>
     );
