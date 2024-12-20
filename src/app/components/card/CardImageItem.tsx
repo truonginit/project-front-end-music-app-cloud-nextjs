@@ -1,7 +1,8 @@
+/* eslint-disable @next/next/no-img-element */
 export const CardImageItem = () => {
     return (
         <>
-            <div className='mb-[10px] aspect-square'>
+            <div className='w-full aspect-square rounded-[15px] truncate mb-[10px]'>
                 <img 
                     src="/demo/100-nhac-tre.png"
                     alt=""
@@ -11,3 +12,5 @@ export const CardImageItem = () => {
         </>
     );
 }
+
+// truncate ~ overflow: hidden

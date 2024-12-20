@@ -16,7 +16,7 @@ export default function CategoryPage() {
           <div>
             <BoxTitle title="Danh mục bài hát" className=""/>
 
-            <div className="grid grid-cols-5">
+            <div className="grid grid-cols-5 gap-[20px]">
               <CardItem/>
               <CardItem/>
               <CardItem/>

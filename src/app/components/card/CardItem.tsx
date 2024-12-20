@@ -3,19 +3,20 @@
 import { CardImageItem } from "./CardImageItem";
 import { CardTitleItem } from "./CardTitleItem";
 import { CardDescItem } from "./CardDescItem";
+import Link from "next/link";
 
 export const CardItem = () => {
     return (
         <>
-            <div className="w-[180px] cursor-pointer">
-                <CardImageItem />
-
-                {/* content */}
-                <div>
+            <div className="">
+                <Link href={'/'}>
+                    <CardImageItem />
                     <CardTitleItem />
                     <CardDescItem />
-                </div>
+                </Link>
+
             </div>
         </>
     ); 
 }
+

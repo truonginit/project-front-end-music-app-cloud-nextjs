@@ -26,10 +26,10 @@ export const SongItem = () => {
 
                 {/* wishlist & play */}
                 <div className="flex items-center gap-x-[10px]">
-                    <div className="w-[34px] h-[34px] text-[18px] inline-flex justify-center items-center rounded-[50%] dark:text-darkModeText border-[1px] dark:border-darkModeText hover:dark:border-darkModeActive hover:dark:bg-darkModeActive hover:duration-1000">
+                    <div className="w-[34px] h-[34px] text-[16px] inline-flex justify-center items-center rounded-[50%] dark:text-darkModeText border-[1px] dark:border-darkModeText hover:dark:border-darkModeActive hover:dark:bg-darkModeActive hover:duration-1000">
                         <FaPlay />
                     </div>
-                    <div className="w-[34px] h-[34px] text-[18px] inline-flex justify-center items-center  rounded-[50%] dark:text-darkModeText border-[1px] dark:border-darkModeText hover:dark:border-darkModeActive hover:dark:bg-darkModeActive hover:duration-1000">
+                    <div className="w-[34px] h-[34px] text-[16px] inline-flex justify-center items-center  rounded-[50%] dark:text-darkModeText border-[1px] dark:border-darkModeText hover:dark:border-darkModeActive hover:dark:bg-darkModeActive hover:duration-1000">
                         <FaRegHeart />
                     </div>
                 </div>

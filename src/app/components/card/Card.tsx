@@ -11,7 +11,8 @@ export const Card = (props: InterfaceProps) => {
 
     return (
         <>
-            <div className={"flex items-center gap-x-[20px] mb-[30px]" + className}>
+            {/* <div className={"flex items-center gap-x-[20px] mb-[30px]" + className}> */}
+            <div className={"grid grid-cols-5 gap-[20px] mb-[30px]" + className}>
                 <CardItem />
                 <CardItem />
                 <CardItem />
