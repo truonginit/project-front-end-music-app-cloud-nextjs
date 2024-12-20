@@ -1,3 +1,5 @@
+import { BoxTitle } from "@/app/components/BoxTitle/BoxTitle";
+import { Song2 } from "@/app/components/Song2/Song2";
 import type { Metadata } from "next";
 
 // Metadata
@@ -9,7 +11,9 @@ export const metadata: Metadata = {
 export default function Register() {
     return (
         <>
-          <h1>TRANG DANH DANH SÁCH BÀI HÁT YÊU THÍCH</h1>
+          <BoxTitle title="Bài Hát Yêu Thích" className="" />
+
+          <Song2 />
         </>
       );
 }
