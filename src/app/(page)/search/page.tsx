@@ -1,3 +1,5 @@
+import { BoxTitle } from "@/app/components/BoxTitle/BoxTitle";
+import { Song2 } from "@/app/components/Song2/Song2";
 import type { Metadata } from "next";
 
 // Metadata
@@ -9,7 +11,9 @@ export const metadata: Metadata = {
 export default function ResultSearch() {
     return (
         <>
-          <h1>TRANG KẾT QUẢ TÌM KIẾM</h1>
+          <BoxTitle title="Kết Quả Tìm Kiếm" className="" />
+          
+          <Song2 />
         </>
       );
 }
