@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
 
+// components
+import { CardInfo } from "@/app/components/Card/CardInfo";
+import { BoxTitle } from "@/app/components/BoxTitle/BoxTitle";
+import { Song2 } from "@/app/components/Song2/Song2";
+
 // Metadata
 export const metadata: Metadata = {
   title: "Chi tiết danh mục",
@@ -9,7 +14,12 @@ export const metadata: Metadata = {
 export default function CategoryDetailPage() {
     return (
         <>
-          <h1>TRANG CHI TIẾT DANH MỤC</h1>
+          {/* card info */}
+          <CardInfo />
+
+          {/* Danh sách bài hát của danh mục */}
+          <BoxTitle title="Danh Sách Bài Hát" className="" />
+          <Song2 />
         </>
       );
 }
