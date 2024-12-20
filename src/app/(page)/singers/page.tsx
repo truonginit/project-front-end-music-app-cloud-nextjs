@@ -1,3 +1,5 @@
+import { BoxTitle } from "@/app/components/BoxTitle/BoxTitle";
+import { Card } from "@/app/components/Card/Card";
 import type { Metadata } from "next";
 
 // Metadata
@@ -9,7 +11,9 @@ export const metadata: Metadata = {
 export default function SingerPage() {
     return (
         <>
-          <h1>TRANG DANH SÁCH CA SĨ</h1>
+          <BoxTitle title="Danh Sách Ca Sĩ" className=""/>
+
+          <Card className="" />
         </>
       );
 }
