@@ -25,9 +25,9 @@ export default function Register() {
                 <BoxTitle title="Đăng Ký Tài Khoản" className="" />
               </div>
 
-              <FormInput type="text" placeholder="Ví dụ: Le Van A"/>
-              <FormInput type="email" placeholder="Ví dụ: levana@gmail.com"/>
-              <FormInput type="password" />
+              <FormInput title="Họ Tên" type="text" placeholder="Ví dụ: Le Van A"/>
+              <FormInput title="email" type="email" placeholder="Ví dụ: levana@gmail.com"/>
+              <FormInput title="mật khẩu" type="password" />
               <FormButtonSubmit text="Đăng Ký" />
 
             </form>

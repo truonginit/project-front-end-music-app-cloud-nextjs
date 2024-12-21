@@ -1,11 +1,11 @@
-export const FormInput = (props: {type: string, placeholder?: string} ) => {
-    const { type, placeholder } = props;
+export const FormInput = (props: {title: string, type: string, placeholder?: string} ) => {
+    const { title, type, placeholder } = props;
 
     return (
         <>
             <div  className="flex flex-col gap-y-[5px] w-full rounded-[6px] truncate mb-[15px]">
                   <label htmlFor="" className="text-[14px] font-[600] dark:text-darkModeText capitalize">
-                    {type}  <span className="text-red-600">*</span>
+                    {title}  <span className="text-red-600">*</span>
                   </label>
                   <input 
                     type={type}

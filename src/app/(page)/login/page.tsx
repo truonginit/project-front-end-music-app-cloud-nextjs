@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function Login() {
   return (
       <>
-        <div className="w-full h-full flex items-center justify-center">
+        <div className="w-full h-full flex items-center justify-center"> {/* center: căn giữa element nằm bên trong */}
             {/* form đăng nhập */}
             <form 
               action=""
@@ -25,8 +25,8 @@ export default function Login() {
                 <BoxTitle title="Đăng Nhập Tài Khoản" className="" />
               </div>
 
-              <FormInput type="email" placeholder="Ví dụ: levana@gmail.com"/>
-              <FormInput type="password" />
+              <FormInput title="email" type="email" placeholder="Ví dụ: levana@gmail.com"/>
+              <FormInput title="mật khẩu" type="password" />
               <FormButtonSubmit text="Đăng Nhập" />
 
             </form>
