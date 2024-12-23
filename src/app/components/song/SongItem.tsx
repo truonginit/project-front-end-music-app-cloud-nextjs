@@ -5,8 +5,19 @@ import { FaPlay, FaRegHeart  } from "react-icons/fa6";
 // import Link from "next/link";
 import { SongImageItem } from "./SongImageItem";
 import { SongTitleItem } from "./SongTitleItem";
+import { SongSingerItem } from "./SongSingerItem";
 
-export const SongItem = () => {
+// interface
+import { SongInterface } from '../../interfaces/song';
+
+export const SongItem = (props: { data: SongInterface}) => {
+    const { data } = props;
+
+    // format lại số lượt nghe 
+    const listen: string = data.listen.toLocaleString();
+
+    const singerQuality: number = data.singers.length - 1;
+
     return (
         <>
             <div 
@@ -14,13 +25,24 @@ export const SongItem = () => {
             > {/* wrap */}
                 {/* content */}
                 <div className="flex items-center gap-x-[10px]">
-                    <SongImageItem />
+                    <SongImageItem img={data.image} />
 
                     {/* info: Tên bài nhạc & Tên Ca sĩ & Số lượt nghe */}
                     <div className="flex flex-col cursor-pointer">
-                        <SongTitleItem />
-                        <span className="text-[12px] font-[400] dark:text-darkModeSubText">Hồ Quang Hiếu, Huỳnh Văn</span>
-                        <span className="text-[12px] font-[400] dark:text-darkModeText">24.500 lượt nghe</span>
+                        <SongTitleItem title = {data.title} href={data.id}/>
+
+                        {/* danh sách ca sĩ */}
+                        <div>
+                            {data.singers?.map((singer, index) => 
+                                <SongSingerItem 
+                                    key={index} 
+                                    href={singer.href}
+                                    singer={singer.title} 
+                                    isLast={index === singerQuality ? true : false}
+                                />)}
+                        </div>
+
+                        <span className="text-[12px] font-[400] dark:text-darkModeText">{listen} lượt nghe</span>
                     </div>
                 </div>
 
