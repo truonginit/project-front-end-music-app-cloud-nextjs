@@ -8,14 +8,15 @@ import { SongTitleItem } from "./SongTitleItem";
 import { SongSingerItem } from "./SongSingerItem";
 
 // interface
-import { SongInterface } from '../../interfaces/song';
+import * as SongInterface from '../../interfaces/song';
 
-export const SongItem = (props: { data: SongInterface}) => {
+export const SongItem = (props: { data: SongInterface.Song}) => {
     const { data } = props;
 
     // format lại số lượt nghe 
     const listen: string = data.listen.toLocaleString();
 
+    // số lượng ca sĩ
     const singerQuality: number = data.singers.length - 1;
 
     return (

@@ -5,7 +5,7 @@ import { Song } from '../Song/Song';
 import { BoxTitle } from "../BoxTitle/BoxTitle";
 
 // interface
-import { SongInterface, SingerInterface } from '../../interfaces/song';
+import * as SongInterface from '../../interfaces/song';
 
 // firebase
 import { ref, onValue } from "firebase/database";
@@ -17,14 +17,14 @@ import { Database } from '../../config/firebaseConfig';
 const songRef = ref(Database, 'songs'); 
 
 // lấy danh sách tên ca sĩ
-const getSingerList = (singerListId: string[]): SingerInterface[] => {
-    const singerNames: SingerInterface[] = []; // mảng chứa danh sách tên ca sĩ
+const getSingerList = (singerListId: string[]): SongInterface.SingerOfSong[] => {
+    const singerNames: SongInterface.SingerOfSong[] = []; // mảng chứa danh sách tên ca sĩ
     
     singerListId.forEach( ( singerId: string ) => {
         if(singerId) {
             const singerRefId = ref(Database, 'singers/' + singerId); 
             onValue(singerRefId, ( snapshot ) => {
-                const item: SingerInterface = { title: snapshot.val().title, href: singerId };
+                const item: SongInterface.SingerOfSong = { title: snapshot.val().title, href: singerId };
                 singerNames.push(item);
             });
         }
@@ -34,7 +34,7 @@ const getSingerList = (singerListId: string[]): SingerInterface[] => {
 
 export const Section1 = () => {
     // mảng chứa data 
-    const DataSection: SongInterface[] = [];
+    const DataSection: SongInterface.Song[] = [];
 
     // lấy dữ liệu từ firebase
     onValue(songRef, (songItems) => {
@@ -43,18 +43,18 @@ export const Section1 = () => {
             const songData = songItem.val();    // Data bài nhạc
 
             // lấy danh sách ca sĩ của bài nhạc
-            const singerNames: SingerInterface[] = getSingerList(songData.singerId); // mảng chứa danh sách tên ca sĩ
+            const singerNames: SongInterface.SingerOfSong[] = getSingerList(songData.singerId); // mảng chứa danh sách tên ca sĩ
+
+            const item: SongInterface.Song = {
+                id: songId,
+                title: songData.title,
+                image: songData.image,
+                singers: singerNames,
+                listen: songData.listen
+            };
 
             // giới hạn chỉ có 3 item
-            if(DataSection.length < 3) {
-                DataSection.push({
-                    id: songId,
-                    title: songData.title,
-                    image: songData.image,
-                    singers: singerNames,
-                    listen: songData.listen
-                });
-            }
+            if(DataSection.length < 3) DataSection.push(item);
         });
     });
     
@@ -65,7 +65,7 @@ export const Section1 = () => {
 
                 <div className="w-[425px] ml-[20px]">
                     <BoxTitle title="Nghe nhiều" className="" />
-                    <Song data = {DataSection} />  {/* nghe nhiều */}
+                    { <Song data = {DataSection} /> }
                 </div>
             </div>
         </>

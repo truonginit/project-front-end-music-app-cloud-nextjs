@@ -1,13 +1,13 @@
-// interface section 1
-export interface SingerInterface {
+// interface
+export interface SingerOfSong {
     title: string,
     href: string,
 }
 
-export interface SongInterface {
+export interface Song {
     id: string,
     categoryId?: string,
-    singers: SingerInterface[],
+    singers: SingerOfSong[],
     title: string,
     image: string,
     lyrics?: string,
