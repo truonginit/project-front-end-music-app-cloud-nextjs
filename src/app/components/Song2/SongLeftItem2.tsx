@@ -1,8 +1,10 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @next/next/no-img-element */
 // icon
 import { FaPlay } from "react-icons/fa6";
 
-export const SongLeftItem2 = () => {
+export const SongLeftItem2 = (props: any) => {
+    const { title, image } = props;
     return (
         <>
             <div className="w-[40%] flex items-center gap-x-[12px] cursor-pointer">
@@ -13,12 +15,12 @@ export const SongLeftItem2 = () => {
 
                 {/* image */}
                 <div className="w-[42px] aspect-square truncate rounded-[8px]">
-                    <img src="/demo/hoquanghieu-cophong.png" alt="" className="" />
+                    <img src={image} alt="" className="" />
                 </div>
 
                 {/* title */}
                 <div className="text-[14px] font-[700] dark:text-darkModeText">
-                    Cô Phòng
+                    {title}
                 </div>
             </div>
         </>

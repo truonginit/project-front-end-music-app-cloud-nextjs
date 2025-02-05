@@ -18,24 +18,21 @@ import { Database } from '../../config/firebaseConfig';
 
 // interface
 import * as CategoryInterface from '../../interfaces/categories'; 
-import * as SingerInterface from '../../interfaces/singer';
 
-// Intersection type (hợp nhiều interface làm 1), dùng dấu &
-type GeneralInterface = CategoryInterface.Category & SingerInterface.Singer;
 
 // collection lấy dữ liệu từ firebase
 const categoriesRef = ref(Database, 'categories'); 
 
 export default function CategoryPage() {
     // mảng chứa data 
-    const DataSection: GeneralInterface[] = [];
+    const DataSection: CategoryInterface.Category[] = [];
 
     onValue(categoriesRef, (categoryItems) => {
         categoryItems.forEach( categoryItem => {
             const categoryId   = categoryItem.key;
             const categoryData = categoryItem.val();
             
-            const item: GeneralInterface = {
+            const item: CategoryInterface.Category = {
                 id: categoryId, 
                 title: categoryData.title, 
                 description: categoryData.description, 
