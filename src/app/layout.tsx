@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
   return (
-    <html lang="vi" className="dark">
+    <html lang="en" className="dark">
       <body className="dark:bg-darkModeBackground">
         <div className="container md:mx-auto mx-[0px]"> {/* container */}
           {/* Sider & Search & Nội Dung Chính */}

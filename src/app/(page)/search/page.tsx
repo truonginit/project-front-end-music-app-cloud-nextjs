@@ -1,5 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+// component
 import { BoxTitle } from "@/app/components/BoxTitle/BoxTitle";
-import { Song2 } from "@/app/components/Song2/Song2";
+import { Section1 } from './section1';
+
 import type { Metadata } from "next";
 
 // Metadata
@@ -8,12 +11,15 @@ export const metadata: Metadata = {
   description: "Ứng dụng nghe nhạc trực tuyến",
 };
 
-export default function ResultSearch() {
+
+
+export default async function ResultSearch() {
     return (
         <>
           <BoxTitle title="Kết Quả Tìm Kiếm" className="" />
           
-          <Song2 />
+          <Section1 />
+          
         </>
       );
 }
