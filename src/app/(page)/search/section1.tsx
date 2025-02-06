@@ -6,11 +6,12 @@ import { Song2 } from "@/app/components/Song2/Song2";
 
 // hook
 import { useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 
 // firebase
 import { ref, get } from "firebase/database";
 import { Database } from '@/app/config/firebaseConfig'; // định ngh
-import { useEffect, useState } from "react";
+
 
 // Lấy các ca sĩ trình diễn bài nhạc
 const getSingerOfSongById = async (singerIds: string[]) => {

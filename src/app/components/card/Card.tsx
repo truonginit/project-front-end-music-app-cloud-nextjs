@@ -15,7 +15,7 @@ interface InterfaceProps {
 }
 
 export const Card = (props: InterfaceProps) => {
-    const { linkTo, data ,className } = props;
+    const { linkTo, data, className } = props;
     
 
     return (
