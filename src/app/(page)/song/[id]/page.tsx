@@ -72,9 +72,6 @@ export default async function SongDetailPage(props: any) {
   // lấy các bài hát có cùng danh mục (songs)
   const songs = await getListSongDiff(id, song.categoryId);
 
-  console.log(`lyrics:::`, song.lyric);
-  const lyrics = song.lyric;
-  console.log(`lyrrics:: ${lyrics}`);
   return (
       <>
         {/* card info */}
