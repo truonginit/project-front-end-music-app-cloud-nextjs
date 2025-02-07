@@ -1,73 +1,98 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+"use client";
+
+
 // components
 import { Banner } from "../Banner/Banner";
 import { Song } from '../Song/Song';
 import { BoxTitle } from "../BoxTitle/BoxTitle";
 
-// interface
-import * as SongInterface from '../../interfaces/song';
-
 // firebase
-import { ref, onValue } from "firebase/database";
+import { ref, get } from "firebase/database";
 
 // firebase config
 import { Database } from '../../config/firebaseConfig';
+import { useEffect, useState } from "react";
 
-// collection lấy dữ liệu từ firebase
-const songRef = ref(Database, 'songs'); 
-
-// lấy danh sách tên ca sĩ
-const getSingerList = (singerListId: string[]): SongInterface.SingerOfSong[] => {
-    const singerNames: SongInterface.SingerOfSong[] = []; // mảng chứa danh sách tên ca sĩ
-    
-    singerListId.forEach( ( singerId: string ) => {
-        if(singerId) {
-            const singerRefId = ref(Database, 'singers/' + singerId); 
-            onValue(singerRefId, ( snapshot ) => {
-                const item: SongInterface.SingerOfSong = { title: snapshot.val().title, href: singerId };
-                singerNames.push(item);
-            });
-        }
+// reload raw data
+const reloadRawData = (rawData: any) => {
+    const data: any[] = [];
+    rawData.forEach((item: { key: any; val: () => any; }) => { 
+        data.push({ id: item.key, ...item.val() }) 
     })
-    return singerNames;
+    return data.slice(0, data.length - 1);
+}
+
+// Lấy các ca sĩ trình diễn bài nhạc
+const getSingerOfSongById = async (singerIds: string[]) => {
+    const result: any[] = [];
+    for(const singerId of singerIds) {
+      const raw = await get(ref(Database, '/singers/' + singerId));
+      result.push({
+        id: singerId, 
+        title: raw.val().title
+      })
+    }
+    return result;
+}
+
+// Lấy danh sách bài nhạc
+const getListSong = async() => {
+     // lấy dữ liệu raw trên firebase
+     const rawData = await get(ref(Database, 'songs'));
+     const data: any[] = reloadRawData(rawData);
+
+     // lấy ca sĩ của bài nhạc
+     for(const item of data) {
+         item['singers'] = await getSingerOfSongById(item.singerId);
+     }
+     return data;
 }
 
 export const Section1 = () => {
-    // mảng chứa data 
-    const DataSection: SongInterface.Song[] = [];
+    const [songs, setSongs] = useState<any>(null);
 
     // lấy dữ liệu từ firebase
-    onValue(songRef, (songItems) => {
-        songItems.forEach( ( songItem ) => {
-            const songId = songItem.key;        // ID bài nhạc
-            const songData = songItem.val();    // Data bài nhạc
+    // lấy danh sách bài nhạc
+    useEffect(() => {
+        const fetchOnFirebase = async () => {
+           const data: any[] = await getListSong();
+            setSongs(data);
+        }
 
-            // lấy danh sách ca sĩ của bài nhạc
-            const singerNames: SongInterface.SingerOfSong[] = getSingerList(songData.singerId); // mảng chứa danh sách tên ca sĩ
-
-            const item: SongInterface.Song = {
-                id: songId,
-                title: songData.title,
-                image: songData.image,
-                singers: singerNames,
-                listen: songData.listen
-            };
-
-            // giới hạn chỉ có 3 item
-            if(DataSection.length < 3) DataSection.push(item);
-        });
-    });
+        fetchOnFirebase();
+    }, [songs]);
     
     return (
         <>
             <div className="flex items-end mb-[30px]" > {/* wrap */}
                 <Banner />
-
                 <div className="w-[425px] ml-[20px]">
                     <BoxTitle title="Nghe nhiều" className="" />
-                    { <Song data = {DataSection} /> }
+                    <Song data = {songs} />
                 </div>
             </div>
         </>
     );
 }
+
+// onValue(songRef, (songItems) => {
+//     songItems.forEach( ( songItem ) => {
+//         const songId = songItem.key;        // ID bài nhạc
+//         const songData = songItem.val();    // Data bài nhạc
+
+//         // lấy danh sách ca sĩ của bài nhạc
+//         const singerNames: SongInterface.SingerOfSong[] = getSingerList(songData.singerId); // mảng chứa danh sách tên ca sĩ
+
+//         const item: SongInterface.Song = {
+//             id: songId,
+//             title: songData.title,
+//             image: songData.image,
+//             singers: singerNames,
+//             listen: songData.listen
+//         };
+
+//         // giới hạn chỉ có 3 item
+//         if(DataSection.length < 3) DataSection.push(item);
+//     });
+// });

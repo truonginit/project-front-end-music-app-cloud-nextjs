@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // icon
 import { FaPlay, FaRegHeart  } from "react-icons/fa6";
 
@@ -6,11 +7,9 @@ import { FaPlay, FaRegHeart  } from "react-icons/fa6";
 import { SongImageItem } from "./SongImageItem";
 import { SongTitleItem } from "./SongTitleItem";
 import { SongSingerItem } from "./SongSingerItem";
+import { Key } from "react";
 
-// interface
-import * as SongInterface from '../../interfaces/song';
-
-export const SongItem = (props: { data: SongInterface.Song}) => {
+export const SongItem = (props: any) => {
     const { data } = props;
 
     // format lại số lượt nghe 
@@ -23,7 +22,8 @@ export const SongItem = (props: { data: SongInterface.Song}) => {
         <>
             <div 
                 className="w-full h-[96px] dark:bg-darkModePrimary rounded-[15px] p-[10px] flex items-center justify-between"
-            > {/* wrap */}
+            > 
+                {/* wrap */}
                 {/* content */}
                 <div className="flex items-center gap-x-[10px]">
                     <SongImageItem img={data.image} />
@@ -34,10 +34,10 @@ export const SongItem = (props: { data: SongInterface.Song}) => {
 
                         {/* danh sách ca sĩ */}
                         <div>
-                            {data.singers?.map((singer, index) => 
+                            {data?.singers?.map((singer: { id: string; title: string; }, index: Key | null | undefined) => 
                                 <SongSingerItem 
                                     key={index} 
-                                    href={singer.href}
+                                    href={singer.id}
                                     singer={singer.title} 
                                     isLast={index === singerQuality ? true : false}
                                 />)}
