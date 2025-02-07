@@ -34,7 +34,7 @@ export const Card = (props: InterfaceProps) => {
                             data = {item}
                             linkTo= {linkTo}
                         />)
-                    : skeleton.map((item, index) => <CardItemSkeleton /> )
+                    : skeleton.map((item, index) => <CardItemSkeleton key={index} /> )
                 }
             </div>
         </>
