@@ -5,8 +5,9 @@ import 'react-loading-skeleton/dist/skeleton.css'
 export const SongImageItemSkeleton = () => {
     return (
         <>
-            <Skeleton className={"aspect-square rounded-[10px] w-[76px] h-[76px] truncate"}>
-            </Skeleton>
+            <div className={"aspect-square rounded-[15px] w-[76px] h-auto"}>
+                <Skeleton className='w-full h-full' />
+            </div>
         </>
     ); 
 }

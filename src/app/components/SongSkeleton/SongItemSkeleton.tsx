@@ -16,17 +16,16 @@ export const SongItemSkeleton = () => {
                     <SongImageItemSkeleton />
 
                     {/* info: Tên bài nhạc & Tên Ca sĩ & Số lượt nghe */}
-                    <div className="flex flex-col cursor-pointer">
+                    <div className="flex flex-col justify-center cursor-pointer">
                         <SongTitleItemSkeleton />
 
                         {/* danh sách ca sĩ */}
-                        <div className='mt-[10px] w-[83px] h-[10px]'>
-                            <Skeleton className=" text-[12px] font-[400] hover:duration-700">
-                            </Skeleton>
+                        <div className='mt-[10px] w-[83px] h-[8px]'>
+                            <Skeleton className=" w-full h-full"/>
                         </div>
 
-                        <div className='mt-[10px] w-[20px] h-[18px]'>
-                            <Skeleton className=" text-[12px] font-[400] dark:text-darkModeText"></Skeleton>
+                        <div className='mt-[10px] w-[20px] h-[5px]'>
+                            <Skeleton className=" w-full h-full"/>
                         </div>
 
                     </div>

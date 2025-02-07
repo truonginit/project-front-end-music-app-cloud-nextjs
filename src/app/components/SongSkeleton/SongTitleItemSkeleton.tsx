@@ -7,7 +7,7 @@ export const SongTitleItemSkeleton = () => {
     return (
         <>
             <div className="w-[100px] h-[10px]" >
-                <Skeleton className="text-[16px] font-[600] dark:text-darkModeText dark:hover:text-darkModeActive hover:duration-1000"></Skeleton>
+                <Skeleton className="w-full h-full"></Skeleton>
             </div>
         </>
     );

@@ -1,5 +1,8 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable react/jsx-key */
 // components
 import { CardItem } from "./CardItem";
+import { CardItemSkeleton } from "../CardSkeleton/CardItemSkeleton";
 
 // interface
 import * as CategoryInterface from '../../interfaces/categories'; 
@@ -17,11 +20,12 @@ interface InterfaceProps {
 export const Card = (props: InterfaceProps) => {
     const { linkTo, data, className } = props;
     
+    const skeleton = new Array(5).fill("");
 
     return (
         <>
             {/* <div className={"flex items-center gap-x-[20px] mb-[30px]" + className}> */}
-            <div className={"grid grid-cols-5 gap-[20px] mb-[30px]" + className}>
+            <div className={"grid grid-cols-5 gap-[20px] mb-[30px]"}>
                 { 
                     data 
                     ? data.map( ( item, index ) => 
@@ -30,7 +34,7 @@ export const Card = (props: InterfaceProps) => {
                             data = {item}
                             linkTo= {linkTo}
                         />)
-                    : ""
+                    : skeleton.map((item, index) => <CardItemSkeleton /> )
                 }
             </div>
         </>
