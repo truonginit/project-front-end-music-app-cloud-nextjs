@@ -22,22 +22,74 @@ body {
     width: 8px;
     height: 8px;
     border-radius: 50%;
+    /* background-color: transparent;  muốn để màu xanh cho chấm tròn thì bật cái ở dưới */
+    
     background-color: #00ADEF;
     cursor: pointer;
     box-shadow: 0px 0px 8px 0px #000000EB;  
 }
 
 .range-music::-moz-range-thumb {
-    /* css cho cái thanh trượt */
+    /* bật 3 cái này nên sẽ có thêm chấm tròn point */
     width: 8px;
-    height: 8px;
+    height: 8px; 
     border-radius: 50%;
+    
+    /* css cho cái thanh trượt */
     background: #00ADEF;
     cursor: pointer;
-    box-shadow: 0px 0px 8px 0px #000000EB;
+    /* box-shadow: 0px 0px 8px 0px #000000EB; */
   }
 /* hết range music */
 
 /* background animation khi hover */
 
 /* hết background animation khi hover */
+
+/* khối phát nhạc play */
+.play-component {
+    display: none; 
+     /* mặc định khối phát nhạc không hiển thị */
+}
+
+.play-component.play {
+    display: flex;
+}
+/* hết khối phát nhạc play */
+
+/* button play của khối phát nhạc */
+.button-action.play .button-play {
+    display: none;
+}
+
+.button-action.play .button-pause {
+    /* khi có class .play thì đang phát nhạc => hiển thị nút pause */
+    display: block;
+}
+
+.button-action .button-pause {
+    /* khi có class .play thì đang phát nhạc => ẩn nút pause */
+    display: none;
+}
+/* hết button play của khối phát nhạc */
+
+/* khối volume */
+.icon-volume .volume-mute{
+    display: none;
+}
+
+.icon-volume.mutex .volume-up {
+    display: none;
+}
+
+.icon-volume.mutex .volume-mute {
+    display: block;
+}
+/* hết khối volume */
+
+/* khi active bài nhạc thì nút play màu xanh (ví dụ ở phần nge nhiều trang chính) */
+[song-id].action [flag-for-action] {
+    background-color: #00ADEF;
+    border: #00ADEF;
+}
+/* hết khi active bài nhạc thì nút play màu xanh (ví dụ ở phần nge nhiều trang chính) */

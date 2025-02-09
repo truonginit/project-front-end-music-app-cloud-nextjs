@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // icon
-import { FaPlay, FaRegHeart  } from "react-icons/fa6";
+import { FaRegHeart  } from "react-icons/fa6";
 
 // components
 // import Link from "next/link";
@@ -8,6 +8,7 @@ import { SongImageItem } from "./SongImageItem";
 import { SongTitleItem } from "./SongTitleItem";
 import { SongSingerItem } from "./SongSingerItem";
 import { Key } from "react";
+import { ButtonPLay } from "../Button/ButtonPlay";
 
 export const SongItem = (props: any) => {
     const { data } = props;
@@ -22,6 +23,7 @@ export const SongItem = (props: any) => {
         <>
             <div 
                 className="w-full h-[96px] dark:bg-darkModePrimary rounded-[15px] p-[10px] flex items-center justify-between"
+                song-id = {data.id}
             > 
                 {/* wrap */}
                 {/* content */}
@@ -49,9 +51,7 @@ export const SongItem = (props: any) => {
 
                 {/* wishlist & play */}
                 <div className="flex items-center gap-x-[10px]">
-                    <div className="w-[34px] h-[34px] text-[16px] inline-flex justify-center items-center rounded-[50%] dark:text-darkModeText border-[1px] dark:border-darkModeText hover:dark:border-darkModeActive hover:dark:bg-darkModeActive hover:duration-1000">
-                        <FaPlay />
-                    </div>
+                    <ButtonPLay data = {data} />
                     <div className="w-[34px] h-[34px] text-[16px] inline-flex justify-center items-center  rounded-[50%] dark:text-darkModeText border-[1px] dark:border-darkModeText hover:dark:border-darkModeActive hover:dark:bg-darkModeActive hover:duration-1000">
                         <FaRegHeart />
                     </div>
