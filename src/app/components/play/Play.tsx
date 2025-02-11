@@ -7,6 +7,7 @@ import { PlayControlMain } from './PlayControlMain';
 import { PlayControlVolume } from './PlayControlVolume';
 
 export const Play = () => {
+    // khi bài nhạc đã load lên file audio
     const handleLoad = () => {
         const audioElement: any  = document.querySelector('.audio');
         const timelineElement    = document.querySelector('.audio-timeline');

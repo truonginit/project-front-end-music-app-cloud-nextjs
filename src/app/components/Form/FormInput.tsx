@@ -1,5 +1,6 @@
-export const FormInput = (props: {title: string, type: string, placeholder?: string} ) => {
-    const { title, type, placeholder } = props;
+/* eslint-disable @typescript-eslint/no-explicit-any */
+export const FormInput = (props: any ) => {
+    const { title, type, placeholder, name } = props;
 
     return (
         <>
@@ -8,9 +9,11 @@ export const FormInput = (props: {title: string, type: string, placeholder?: str
                     {title}  <span className="text-red-600">*</span>
                   </label>
                   <input 
-                    type={type}
-                    placeholder={placeholder}
-                    className="w-full outline-none p-[14px] rounded-[6px]"
+                    name = {name}
+                    type = {type}
+                    placeholder = {placeholder}
+                    className = "w-full outline-none p-[14px] rounded-[6px]"
+                    defaultValue={""}
                   />
             </div>
         </>
